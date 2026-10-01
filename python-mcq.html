@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Python MCQ Quiz | Vaanisha Blog</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #fff5f9, #fde7f0);
+            color: #553b46;
+        }
+
+        header {
+            text-align: center;
+            padding: 45px 20px;
+            background: linear-gradient(135deg, #f8c8dc, #f6d6e5);
+        }
+
+        header h1 {
+            margin: 0;
+            color: #8f4565;
+            font-size: 42px;
+        }
+
+        header p {
+            color: #704457;
+            font-size: 17px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: white;
+            background: #d982a8;
+            padding: 9px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .quiz-container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 25px;
+        }
+
+        .intro {
+            text-align: center;
+            background: white;
+            padding: 25px;
+            border-radius: 22px;
+            box-shadow: 0 6px 20px rgba(160, 90, 120, 0.12);
+            margin-bottom: 25px;
+        }
+
+        .intro h2 {
+            color: #a34f72;
+        }
+
+        .question {
+            background: white;
+            padding: 25px;
+            margin-bottom: 22px;
+            border-radius: 20px;
+            border: 2px solid #f3d1df;
+            box-shadow: 0 5px 15px rgba(160, 90, 120, 0.08);
+        }
+
+        .question h3 {
+            color: #8f4565;
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            background: #fff4f8;
+            margin: 10px 0;
+            padding: 12px 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            border: 1px solid #f3d5e1;
+            transition: 0.2s;
+        }
+
+        label:hover {
+            background: #fce0eb;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .submit-button {
+            display: block;
+            margin: 30px auto;
+            border: none;
+            background: #df88ad;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #c96f96;
+        }
+
+        #result {
+            display: none;
+            background: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 22px;
+            margin-top: 25px;
+            box-shadow: 0 6px 20px rgba(160, 90, 120, 0.12);
+        }
+
+        #result h2 {
+            color: #a34f72;
+        }
+
+        #score {
+            font-size: 30px;
+            color: #d06b96;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 25px;
+            background: #f8c8dc;
+            color: #704457;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            .quiz-container {
+                padding: 15px;
+            }
+
+            .question {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>💻 Python MCQ Quiz 🌸</h1>
+
+    <p>
+        Test your Python knowledge!
+    </p>
+
+    <a href="index.html" class="back">
+        ← Back to Vaanisha Blog
+    </a>
+
+</header>
+
+
+<div class="quiz-container">
+
+
+    <div class="intro">
+
+        <h2>🩷 Welcome to the Quiz!</h2>
+
+        <p>
+            Answer all the questions and click
+            <b>Submit Quiz</b> to see your score.
+        </p>
+
+    </div>
+
+
+    <form id="quizForm">
+
+
+        <!-- Question 1 -->
+
+        <div class="question">
+
+            <h3>
+                1. Which function is used to display output in Python?
+            </h3>
+
+            <label>
+                <input type="radio" name="q1" value="A">
+                A. display()
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="B">
+                B. print()
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="C">
+                C. output()
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="D">
+                D. show()
+            </label>
+
+        </div>
+
+
+        <!-- Question 2 -->
+
+        <div class="question">
+
+            <h3>
+                2. Which symbol is used to create a comment in Python?
+            </h3>
+
+            <label>
+                <input type="radio" name="q2" value="A">
+                A. //
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="B">
+                B. /*
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="C">
+                C. #
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="D">
+                D. --
+            </label>
+
+        </div>
+
+
+        <!-- Question 3 -->
+
+        <div class="question">
+
+            <h3>
+                3. Which of these is a valid Python variable name?
+            </h3>
+
+            <label>
+                <input type="radio" name="q3" value="A">
+                A. 2name
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="B">
+                B. my_name
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="C">
+                C. my-name
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="D">
+                D. class
+            </label>
+
+        </div>
+
+
+        <!-- Question 4 -->
+
+        <div class="question">
+
+            <h3>
+                4. Which data type is used for whole numbers?
+            </h3>
+
+            <label>
+                <input type="radio" name="q4" value="A">
+                A. float
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="B">
+                B. string
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="C">
+                C. int
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="D">
+                D. list
+            </label>
+
+        </div>
+
+
+        <!-- Question 5 -->
+
+        <div class="question">
+
+            <h3>
+                5. What is the result of 5 + 3 in Python?
+            </h3>
+
+            <label>
+                <input type="radio" name="q5" value="A">
+                A. 2
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="B">
+                B. 8
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="C">
+                C. 15
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="D">
+                D. 53
+            </label>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="submit-button"
+            onclick="checkQuiz()">
+            Submit Quiz 💗
+        </button>
+
+
+    </form>
+
+
+    <div id="result">
+
+        <h2>🌸 Quiz Complete! 🌸</h2>
+
+        <p>Your score is:</p>
+
+        <div id="score"></div>
+
+        <p id="message"></p>
+
+    </div>
+
+
+</div>
+
+
+<footer>
+
+    <p>
+        Made with 💗 by Vaanisha
+    </p>
+
+</footer>
+
+
+<script>
+
+function checkQuiz() {
+
+    const answers = {
+
+        q1: "B",
+        q2: "C",
+        q3: "B",
+        q4: "C",
+        q5: "B"
+
+    };
+
+
+    let score = 0;
+
+
+    for (let question in answers) {
+
+        const selected =
+            document.querySelector(
+                'input[name="' + question + '"]:checked'
+            );
+
+        if (selected && selected.value === answers[question]) {
+
+            score++;
+
+        }
+
+    }
+
+
+    document.getElementById("result").style.display = "block";
+
+
+    document.getElementById("score").innerHTML =
+        score + " / 5";
+
+
+    let message = "";
+
+
+    if (score === 5) {
+
+        message =
+            "Amazing! You got everything correct! 🌟";
+
+    }
+
+    else if (score >= 3) {
+
+        message =
+            "Great job! Keep practising Python! 🌷";
+
+    }
+
+    else {
+
+        message =
+            "Keep learning and try the quiz again! 💗";
+
+    }
+
+
+    document.getElementById("message").innerHTML =
+        message;
+
+
+    document.getElementById("result").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
