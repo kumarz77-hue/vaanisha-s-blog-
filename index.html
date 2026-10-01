@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vaanisha Blog</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: #fff5f8;
+            color: #4a3740;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #f8c8dc, #f6d6e5);
+            padding: 55px 20px;
+            text-align: center;
+            border-bottom: 3px solid #edabc7;
+        }
+
+        header h1 {
+            font-size: 48px;
+            color: #8f4565;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #704457;
+        }
+
+        nav {
+            background: white;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(120, 70, 90, 0.08);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #a34f72;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #d16b96;
+        }
+
+        .hero {
+            max-width: 1000px;
+            margin: 45px auto;
+            padding: 50px 25px;
+            text-align: center;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(160, 90, 120, 0.12);
+        }
+
+        .hero h2 {
+            color: #a34f72;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        .posts {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .posts h2 {
+            text-align: center;
+            color: #a34f72;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 22px;
+            border: 2px solid #f4d3df;
+            box-shadow: 0 6px 18px rgba(160, 90, 120, 0.08);
+        }
+
+        .card h3 {
+            color: #a34f72;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .card p {
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            background: #e99abb;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #d97fa5;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 28px;
+            text-align: center;
+            background: #f8c8dc;
+            color: #704457;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 36px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px 8px;
+            }
+
+            .hero {
+                margin: 25px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🌸 Vaanisha Blog 🌸</h1>
+
+        <p>
+            A little corner for learning, creativity and ideas
+        </p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#posts">Posts</a>
+        <a href="python-mcq.html">Python Quiz</a>
+    </nav>
+
+    <section class="hero">
+
+        <h2>Welcome to My Blog 💗</h2>
+
+        <p>
+            Welcome to Vaanisha Blog — a pastel little space where
+            learning meets creativity. Explore study resources,
+            programming, quizzes and interesting ideas.
+        </p>
+
+    </section>
+
+    <section class="posts" id="posts">
+
+        <h2>🌷 Explore the Blog</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>📚 Study Corner</h3>
+
+                <p>
+                    Notes, study tips and useful resources to make
+                    learning easier and more enjoyable.
+                </p>
+
+                <a href="#" class="button">
+                    Read More
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>💻 Python World</h3>
+
+                <p>
+                    Learn Python concepts and practise your knowledge
+                    with an interactive MCQ quiz.
+                </p>
+
+                <a href="python-mcq.html" class="button">
+                    Take Quiz
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>✨ Creative Space</h3>
+
+                <p>
+                    Ideas, projects and interesting things that make
+                    learning more creative.
+                </p>
+
+                <a href="#" class="button">
+                    Explore
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            Made with 💗 by Vaanisha
+        </p>
+
+    </footer>
+
+</body>
+</html>
