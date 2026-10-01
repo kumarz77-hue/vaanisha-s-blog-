@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vaanisha Blog</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #05050b;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 72% 65%,
+          rgba(100, 70, 180, 0.18),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 75% 65%,
+          rgba(255, 120, 40, 0.12),
+          transparent 18%
+        ),
+        linear-gradient(
+          to bottom,
+          #010106 0%,
+          #02020a 40%,
+          #05030d 100%
+        );
+    }
+
+    /* Stars */
+
+    .stars {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 10% 20%, white, transparent),
+        radial-gradient(1px 1px at 25% 70%, white, transparent),
+        radial-gradient(1px 1px at 40% 30%, white, transparent),
+        radial-gradient(1px 1px at 60% 15%, white, transparent),
+        radial-gradient(1px 1px at 85% 25%, white, transparent),
+        radial-gradient(1px 1px at 90% 70%, white, transparent),
+        radial-gradient(1px 1px at 55% 80%, white, transparent),
+        radial-gradient(1px 1px at 15% 90%, white, transparent),
+        radial-gradient(1px 1px at 70% 45%, white, transparent);
+
+      background-size: 300px 300px;
+      opacity: 0.65;
+    }
+
+    /* Black hole */
+
+    .black-hole {
+      position: absolute;
+      width: 430px;
+      height: 430px;
+
+      right: 8%;
+      bottom: 8%;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          #000000 0%,
+          #000000 28%,
+          transparent 29%
+        );
+
+      box-shadow:
+        0 0 30px rgba(255, 130, 40, 0.7),
+        0 0 70px rgba(180, 80, 255, 0.45),
+        0 0 130px rgba(100, 50, 255, 0.25);
+
+      transform: rotate(-15deg);
+    }
+
+    .black-hole::before {
+      content: "";
+      position: absolute;
+
+      width: 520px;
+      height: 150px;
+
+      left: -45px;
+      top: 140px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 110, 30, 0.65),
+          rgba(255, 210, 100, 0.9),
+          rgba(150, 70, 255, 0.75),
+          transparent
+        );
+
+      filter: blur(18px);
+
+      transform: rotate(-8deg);
+    }
+
+    .black-hole::after {
+      content: "";
+
+      position: absolute;
+      width: 500px;
+      height: 500px;
+
+      left: -35px;
+      top: -35px;
+
+      border-radius: 50%;
+
+      border: 3px solid rgba(255, 130, 50, 0.35);
+
+      box-shadow:
+        0 0 35px rgba(255, 120, 30, 0.55),
+        0 0 80px rgba(140, 70, 255, 0.3);
+
+      transform: rotate(12deg);
+    }
+
+    /* Hero content */
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+
+      max-width: 1200px;
+      margin: auto;
+
+      min-height: 100vh;
+
+      padding: 90px 7% 60px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .small-title {
+      color: #b9a7ff;
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      max-width: 750px;
+
+      font-size: clamp(50px, 8vw, 105px);
+
+      line-height: 0.95;
+
+      letter-spacing: -4px;
+
+      margin-bottom: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff,
+          #d8d0ff,
+          #9c8cff
+        );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      max-width: 580px;
+
+      color: #bdb9cc;
+
+      font-size: 19px;
+
+      margin-bottom: 35px;
+    }
+
+    .explore-button {
+      display: inline-block;
+
+      padding: 14px 28px;
+
+      border: 1px solid rgba(255,255,255,0.25);
+
+      border-radius: 30px;
+
+      color: white;
+
+      text-decoration: none;
+
+      background: rgba(255,255,255,0.06);
+
+      backdrop-filter: blur(10px);
+
+      transition: 0.3s;
+    }
+
+    .explore-button:hover {
+      background: white;
+      color: black;
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       POSTS
+    ========================== */
+
+    .posts {
+      padding: 100px 7%;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #05030d,
+          #080812
+        );
+    }
+
+    .section-title {
+      text-align: center;
+
+      font-size: 42px;
+
+      margin-bottom: 60px;
+    }
+
+    .post-grid {
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+      gap: 25px;
+    }
+
+    .post-card {
+      padding: 30px;
+
+      min-height: 240px;
+
+      border-radius: 20px;
+
+      background:
+        rgba(255,255,255,0.045);
+
+      border:
+        1px solid rgba(255,255,255,0.09);
+
+      transition: 0.3s;
+    }
+
+    .post-card:hover {
+      transform: translateY(-8px);
+
+      border-color:
+        rgba(160,130,255,0.5);
+
+      background:
+        rgba(255,255,255,0.07);
+    }
+
+    .post-card span {
+      color: #9c8cff;
+
+      font-size: 13px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+    }
+
+    .post-card h3 {
+      font-size: 25px;
+
+      margin: 15px 0;
+    }
+
+    .post-card p {
+      color: #aaa7b7;
+    }
+
+    /* =========================
+       QUIZ SECTION
+    ========================== */
+
+    .quiz-section {
+      padding: 100px 7%;
+
+      text-align: center;
+
+      background: #030309;
+    }
+
+    .quiz-box {
+      max-width: 800px;
+
+      margin: auto;
+
+      padding: 50px 30px;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(120,80,255,0.15),
+          rgba(255,100,30,0.08)
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.1);
+    }
+
+    .quiz-box h2 {
+      font-size: 38px;
+
+      margin-bottom: 15px;
+    }
+
+    .quiz-box p {
+      color: #aaa7b7;
+
+      margin-bottom: 30px;
+    }
+
+    .quiz-button {
+      display: inline-block;
+
+      padding: 14px 30px;
+
+      border-radius: 30px;
+
+      background: white;
+
+      color: black;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+    .quiz-button:hover {
+      transform: scale(1.05);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 35px;
+
+      text-align: center;
+
+      color: #777585;
+
+      background: #020207;
+
+      border-top:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 700px) {
+
+      .hero-content {
+        padding-top: 70px;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .black-hole {
+        width: 280px;
+        height: 280px;
+
+        right: -40px;
+        bottom: 8%;
+      }
+
+      .black-hole::before {
+        width: 340px;
+        height: 100px;
+
+        left: -30px;
+        top: 90px;
+      }
+
+      .black-hole::after {
+        width: 330px;
+        height: 330px;
+
+        left: -25px;
+        top: -25px;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <header class="hero">
+
+    <div class="stars"></div>
+
+    <div class="black-hole"></div>
+
+    <div class="hero-content">
+
+      <div class="small-title">
+        Explore • Learn • Imagine
+      </div>
+
+      <h1>
+        Vaanisha<br>
+        Blog
+      </h1>
+
+      <p>
+        A space for ideas, science, technology,
+        psychology, creativity and everything
+        that makes curiosity worth following.
+      </p>
+
+      <a href="#posts" class="explore-button">
+        Explore the Blog ↓
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       POSTS
+  ========================== -->
+
+  <section class="posts" id="posts">
+
+    <h2 class="section-title">
+      Latest Ideas
+    </h2>
+
+    <div class="post-grid">
+
+      <article class="post-card">
+
+        <span>Science</span>
+
+        <h3>
+          The Mystery of Black Holes
+        </h3>
+
+        <p>
+          Explore what happens when gravity becomes
+          so powerful that even light cannot escape.
+        </p>
+
+      </article>
+
+
+      <article class="post-card">
+
+        <span>Technology</span>
+
+        <h3>
+          The Future of Artificial Intelligence
+        </h3>
+
+        <p>
+          Discover how artificial intelligence is
+          changing the way we learn, create and solve problems.
+        </p>
+
+      </article>
+
+
+      <article class="post-card">
+
+        <span>Psychology</span>
+
+        <h3>
+          Understanding the Human Mind
+        </h3>
+
+        <p>
+          A simple exploration of thoughts, emotions,
+          behaviour and the psychology behind everyday life.
+        </p>
+
+      </article>
+
+
+      <article class="post-card">
+
+        <span>Education</span>
+
+        <h3>
+          Learning Beyond the Classroom
+        </h3>
+
+        <p>
+          Ideas and strategies for studying smarter,
+          building skills and staying curious.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PYTHON QUIZ
+  ========================== -->
+
+  <section class="quiz-section">
+
+    <div class="quiz-box">
+
+      <h2>
+        Test Your Knowledge
+      </h2>
+
+      <p>
+        Try my interactive Python-powered MCQ quiz
+        and challenge yourself.
+      </p>
+
+      <a
+        href="python-mcq.html"
+        class="quiz-button"
+      >
+        Start the Quiz →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    © 2026 Vaanisha Blog · Built with curiosity ✦
+
+  </footer>
+
+</body>
+</html>
